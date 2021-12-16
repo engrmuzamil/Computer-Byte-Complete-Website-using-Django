@@ -1,0 +1,19 @@
+
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+   <div class="row">
+     {% for product in Products %}
+     <div class="col-12 col-sm-12 col-md-4 col-lg-4">
+       <div class="Product">
+         <img src="{{ product.Product_Image.url }}" alt="Image" class="img-thumbnail img-fluid">
+         <a href="{{ product.get_url }}"><h2  class="text-primary">{{product.Product_Name}}</h2></a>
+         <h3>Price: {{product.Product_Price}} Rs.</h3>
+         <p class = "Para">{{product.Product_Description}}</p>
+
+     </div>
+   </div>
+   {% endfor %}
+ </div>
+
+{% endblock %}

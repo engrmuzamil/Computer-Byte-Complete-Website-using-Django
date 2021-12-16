@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+    <div class="container">
+          	<div class="row">
+                 <div class="col-xs-4 item-photo">
+                      <img style="max-width:100%;" src="{{single_product.Product_Image.url}}" />
+                  </div>
+              <div class="product-detail">
+                <div class="col-xs-5" style="border:0px solid gray">
+                    <!-- Datos del vendedor y titulo del producto -->
+                    <h3>{{single_product.Product_Name}}</h3>
+                    <p>{{single_product.Product_Description}}</p>
+                    <h3 style="margin-top:-10px;">{{single_product.Product_Price}}</h3>
+                      <!-- out of Stock -->
+                      {% if single_product.Product_Qty <= 0 %}
+                       <h5 class="text-danger">Product is Out Of Stock</h5>
+                       <!-- limited stock Available -->
+                     {% elif single_product.Product_Qty <= 3 %}
+                       <h5 class="text-success">Limited Stock is Available</h5>
+                       <a href="{% url 'add_cart' single_product.id %}" class="btn btn-primary">Add To Cart</a>
+                       <!-- product Available -->
+                   {% else %}
+                   <a href="{% url 'add_cart' single_product.id %}" class="btn btn-primary">Add To Cart</a>
+                    {% endif %}
+            </div>
+              </div>
+          </div>
+{% endblock %}

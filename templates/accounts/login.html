@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+ <div  class="header" >
+      <h1 class="text-center">Sign in</h1>
+    </div>
+<div class="col-12 col-sm-12 col-md-12 col-lg-12" id = "logIn">
+ <form id="loginForm" action="{% url 'login' %}" method="post" class="form-control">
+    {% csrf_token %}
+          <div class="form-group" style='border: 2px solid;'>
+			 <input type="test" class="form-control" placeholder="Username" name="username">
+          </div> <!-- form-group// -->
+          <div class="form-group" style='border: 2px solid;'>
+			<input type="password" class="form-control" placeholder="Password" name="password" >
+          </div> <!-- form-group// -->
+
+         <!-- form-group form-check .// -->
+          <div class="form-group">
+              <button type="submit" class="btn btn-primary btn-block">Login  </button>
+          </div> <!-- form-group// -->
+      </form>
+ </div>
+ <p class="text-center mt-4">Don't have account? <a href="/accounts/register/">Sign up</a></p>
+{% endblock %}

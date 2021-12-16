@@ -1,0 +1,92 @@
+body{
+ background-size:cover;
+ background: #f4f4f4;
+ font-family:Constantia, "Lucida Bright", "DejaVu Serif", Georgia, serif;
+}
+/*******************Nav bar Styling*******************/
+.brandLogo{
+  height: 100px;
+  width:100px;
+}
+.navbar-nav li{
+  margin-right: 1em;
+  padding: 1em;
+  font-size: 1em;
+  color: white;
+}
+.FormCode{
+    padding: 1em;
+}
+.navbar-nav li:hover{
+  border-bottom: 1px solid green;
+  padding-bottom: 1px solid orange;
+  cursor: pointer;
+}
+
+
+/********************Product Styling******************/
+.Product{
+  width: 100%;
+  margin-left:1%;
+  padding: 0.5em;
+  border: 1px solid white;
+    border-radius: 20px;
+    display: inline-block;
+    overflow: hidden;
+    background: white;
+    display: inline-block;
+}
+.Product h2{
+ font-size: 20px;
+ display: inline-block;
+}
+.Product h3{
+ font-size: 18px;
+}
+.Product p{
+  display: inline-block;
+}
+.row{
+margin-top: 4%;
+margin-left: 6%;
+margin-right: 5%;
+margin-bottom: 2%;
+}
+.Product .Para{
+   font-style: italic;
+     display: inline-block;
+}
+
+#ContactFrm {
+  border-right: 1px solid black;
+  margin-top: 4em;
+  margin-left: 2%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.header{
+  margin-top: 2em;
+  margin-bottom: 2em;
+}
+.vertical-center {
+  display: flex;
+ justify-content: center;
+ align-items: center;
+}
+
+/*************Styling Footer**********/
+footer{
+  background: linear-gradient(yellow, red);
+  padding: 1em;
+  margin-top: 8em;
+  font-weight: bold;
+  font-size: 1.5em;
+  text-align: center;
+}
+
+/* styling product detail */
+.product-detail{
+  margin-left: 4em;
+}

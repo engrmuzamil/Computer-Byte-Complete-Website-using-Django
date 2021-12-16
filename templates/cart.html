@@ -1,0 +1,80 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+    <h1 class="text-center">Cart</h1>
+    <div class="col-12 col-sm-12 col-md-12 col-lg-12">
+{% if not cart_items  %}
+ <h3>Cart is Empty</h3>
+ <button class="btn btn-primary" type="button" name="button" style="margin:4px;">
+   <a href="{% url 'shop' %}" style = "color: white;">Continue To Shopping</a>
+ </button>
+
+{% else %}
+    <table class="table" border = "1px" width = 740px>
+      <thead class="thead-dark">
+        <tr>
+          <th scope="col" width = 60px>Product</th>
+          <th scope="col" width = 260px>Name</th>
+          <th scope="col" width = 100px>Price</th>
+          <th scope="col" width = 160px>Quantity</th>
+          <th scope="col" width = 120px>Net Amount</th>
+          <th scope="col"  width = 60px>Delete</th>
+        </tr>
+      </thead>
+      <tbody >
+        {% for cart_item in cart_items %}
+        <tr>
+          <td>
+            <img src="{{ cart_item.product.Product_Image.url}}" alt="#" width="50px" height="50px">
+          </td>
+          <td>
+            <h5>{{cart_item.product.Product_Name}}</h5>
+            <p>{{cart_item.product.Product_Description}}</p>
+          </td>
+          <td>{{cart_item.product.Product_Price}}</td>
+          <td>
+            <div class="input-group">
+              <span class="input-group-btn">
+                    <a href="{% url 'minus_From_Cart'  cart_item.product.id %}" class="btn btn-default" type="button">
+                      <i class="fa fa-minus"></i>
+                    </a>
+              </span>
+              <input type="number" name="" class="form-control" value="{{cart_item.Quantity}}" min="0" max="{{cart_item.product.Product_Qty}}">
+              <span class="input-group-btn">
+                <a href="{% url 'add_cart' cart_item.product.id %}" class="btn btn-default" type="button">
+                  <i class="fa fa-plus"></i>
+                </a>
+              </span>
+           </div>
+          </td>
+          <td>{{cart_item.sub_total}}</td>
+          <td>
+            <button type="button" name="button">
+              <a href="{% url 'remove_From_Cart'  cart_item.product.id %}"><i class="bi bi-trash" style="color: black; border:none;"></i></a>
+            </button>
+            <div class="collapse navbar-collapse justify-content-between" id="formCollapse">
+              <form class="form-inline">
+                  <div class="input-group">
+                      <input type="number" class="form-control" placeholder="1">
+                      <button type = "submit" class="btn btn-primary btn-sm"type="button" name="button" >Update Qty</button>
+                  </div>
+              </form>
+          </td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+
+    <div class="SumClass">
+      <h3  class="text-right">Total Amount(Rs.): <strong>{{ total }}</strong></h3>
+      <button class="btn btn-primary float-right" type="button" name="button" style="margin:4px;">
+        <a href="{% url 'shop' %}" style = "color: white;">Continue To Shopping</a>
+      </button>
+      <button class="btn btn-primary float-right" type="button" name="button" style="margin:4px;">
+        <a href="{% url 'checkout' %}" style = "color: white;">Checkout</a>
+      </button>
+    </div>
+        </div>
+{% endif %}
+{% endblock %}

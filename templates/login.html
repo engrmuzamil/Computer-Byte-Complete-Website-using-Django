@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+    <div  class="header" >
+      <h1 class="text-center">Contact Us</h1>
+    </div>
+<div class="col-12 col-sm-12 col-md-12 col-lg-12" id = "ContactFrm">
+
+ <form>
+  <div class="form-row">
+    <div class="form-group col-md-12">
+      <label for="inputEmail4">Subject*</label>
+      <input type="text" class="form-control" id="inputEmail4" placeholder="I have Query...." required>
+    </div>
+    <div class="form-group col-md-12">
+      <label for="inputPassword4">Email*</label>
+      <input type="Email" class="form-control" id="inputPassword4" placeholder="email@email.com" required>
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="inputAddress">Message*</label>
+    <textarea rows="5"class="form-control" id="inputAddress" placeholder="i want this but not receive this...."></textarea>
+  </div>
+
+
+
+   <div class="vertical-center">
+  <button type="submit" class="btn btn-primary">Sign in</button>
+    </div>
+</form>
+ </div>
+
+   <div class="col-12 col-sm-12 col-md-4 col-lg-4">
+     <h2 class="text-center">Address:</h2>
+     <p class="text-center">Mardan, KPK, Pakistan</p>
+   </div>
+   <div class="col-12 col-sm-12 col-md-4 col-lg-4">
+     <h2 class="text-center">Phone Number:</h2>
+     <p class="text-center">+923120000000</p>
+  </div>
+  <div class="col-12 col-sm-12 col-md-5 col-lg-5">
+    <h2 class="text-center">Email:</h2>
+    <p class="text-center">computerbyte@computerbyte.com</p>
+  </div>
+{% endblock %}

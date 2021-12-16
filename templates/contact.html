@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+ <div  class="header" >
+      <h1 class="text-center">Contact Us</h1>
+    </div>
+<div class="col-12 col-sm-12 col-md-12 col-lg-12" id = "ContactFrm">
+
+ <form action="{% url 'contact' %}" method="post">
+     {% csrf_token %}
+  <div class="form-row">
+    <div class="form-group col-md-12">
+      <label for="inputEmail4">Subject*</label>
+      <input type="text" class="form-control"id="inputEmail4" style='border: 2px solid;' placeholder="I have Query...." name='subject' required>
+    </div>
+    <div class="form-group col-md-12">
+      <label for="inputPassword4">Email*</label>
+      <input type="Email" class="form-control" id="inputPassword4" style='border: 2px solid;' placeholder="email@email.com" name='email' required>
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="inputAddress">Message*</label>
+    <textarea rows="5"class="form-control" id="inputAddress" style='border: 2px solid;' placeholder="I want this but not receive this...." name='message'></textarea>
+  </div>
+
+
+
+   <div class="vertical-center">
+  <button type="submit" class="btn btn-primary">Send Now</button>
+    </div>
+</form>
+ </div>
+<br><br>
+
+<div class='infoContact'>
+   <div class="contactAddress">
+     <h2 class="text-center">Address:</h2>
+     <p class="text-center">Mardan, KPK, Pakistan</p>
+   </div>
+   <div class="contactPhone">
+     <h2 class="text-center">Phone Number:</h2>
+     <p class="text-center">+923218362009</p>
+  </div>
+  <div class="contactEmail">
+    <h2 class="text-center">Email:</h2>
+    <p class="text-center">admin@computerbyte.com</p>
+  </div>
+  </div>
+{% endblock %}
